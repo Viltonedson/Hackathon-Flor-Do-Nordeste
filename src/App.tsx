@@ -9,6 +9,12 @@ import Messages from './components/home/Messages';
 import {AuthProvider}  from './components/context/AuthContext';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import TestimonialsCarousel from './components/home/TestimonialsCarousel'
+import Footer from './components/layout/Footer';
+import ProductList from './components/product/ProductList';
+import Dashboard from './components/home/Dashboard';
+import ChatbotPage from './components/home/ChatbotPage'
+import SellProduct from './components/product/SellProduct'
 
 function App() {
   return (
@@ -22,6 +28,7 @@ function App() {
                 <Hero />
                 <Main />
                 <Benefits />
+                <TestimonialsCarousel/>
               </main>
             } />
             <Route path="/produto/:id" element={<ProductPage />} />
@@ -29,7 +36,12 @@ function App() {
             <Route path="/messages" element={<Messages />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/produtos/:category" element={<ProductList />} />
+            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/chat-ia" element={<ChatbotPage />} />
+            <Route path="/publicar-produto" element={<SellProduct />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </AuthProvider>

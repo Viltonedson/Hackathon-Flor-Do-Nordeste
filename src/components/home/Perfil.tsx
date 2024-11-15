@@ -8,6 +8,7 @@ import {
   Bot,
   Calendar,
   HeadphonesIcon,
+  
 } from 'lucide-react';
 
 function ProfileOption({ icon: Icon, title, description, onClick }: {
@@ -71,19 +72,25 @@ export default function Profile() {
       icon: Bot,
       title: 'Chat Inteligência Artificial',
       description: 'Tire suas dúvidas com nossa IA',
-      onClick: () => {},
+      onClick: () => navigate('/chat-ia'),
     },
     {
       icon: Calendar,
       title: 'Planejamentos',
       description: 'Gerencie seus planejamentos e metas',
-      onClick: () => {},
+      onClick: () => navigate('/dashboard'),
     },
     {
       icon: HeadphonesIcon,
       title: 'Atendimento ao cliente',
       description: 'Entre em contato com nosso suporte',
       onClick: () => {},
+    },
+    {
+      icon: Package,
+      title: 'Vender seu produto',
+      description: 'Anuncie um novo produto para venda',
+      onClick: () => navigate('/publicar-produto'),
     },
   ];
 

@@ -1,4 +1,5 @@
 import { Shield, Truck, Heart, Users } from 'lucide-react';
+
 <link rel="stylesheet" href="style.css" />
 const benefits = [
   {
@@ -40,8 +41,8 @@ const Benefits = () => {
               <p className="mt-2 text-sm text-gray-600">{benefit.description}</p>
             </div>
           ))}
-        </div>
       </div>
+    </div>
     </div>
   );
 }

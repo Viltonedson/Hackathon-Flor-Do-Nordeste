@@ -1,13 +1,14 @@
-import React from 'react';
 import { Search, ShoppingCart, Menu, User } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Button from '../ui/Button';
 import { useAuth } from '../context/AuthContext';
+import logoImagem from '../../assets/imagem/Flor-do-nordeste.png'
+
 
 const Header = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useAuth();
-
+  const { isAuthenticated } = useAuth();
+  
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4">
@@ -17,9 +18,9 @@ const Header = () => {
             <Button variant="outline" size="sm" className="lg:hidden">
               <Menu className="h-5 w-5" />
             </Button>
-            <a href="/" className="text-2xl font-bold text-primary">
-              Flor do Nordeste
-            </a>
+            <Link to="/" className="text-2xl font-bold text-primary">
+            <img src={logoImagem} alt="Flor do Nordeste" className="h-28 w-auto object-contain" />
+            </Link>
           </div>
 
           {/* Search */}
@@ -57,8 +58,11 @@ const Header = () => {
                 <span className="ml-2">Entrar</span>
               </Button>
             )}
-            <Button variant="outline" size="sm">
-              <ShoppingCart className="h-5 w-5" />
+            <Button 
+              variant="outline" 
+              size="sm">
+              <ShoppingCart 
+              className="h-5 w-5" />
               <span className="ml-2 hidden lg:inline">Carrinho</span>
             </Button>
           </div>
@@ -69,12 +73,12 @@ const Header = () => {
           <ul className="flex items-center gap-6">
             {['Sementes', 'Mudas', 'Equipamentos', 'Artesanato', 'Alimentos'].map((category) => (
               <li key={category}>
-                <a
-                  href={`/categoria/${category.toLowerCase()}`}
+                <Link
+                  to={`/produtos/${category.toLowerCase()}`}
                   className="text-sm font-medium text-gray-600 hover:text-primary"
                 >
                   {category}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

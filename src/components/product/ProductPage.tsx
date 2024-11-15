@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, MessageCircle, ShieldCheck, Download } from 'lucide-react';
 import Button from '../ui/Button';
 import ProductImageGallery from './ProductImageGallery';
@@ -94,7 +94,7 @@ const ProductPage = () => {
 
             <div className="flex gap-4">
               <Button size="lg" className="flex-1">
-                Adicionar ao Carrinho
+                Comprar
               </Button>
               <Button variant="secondary" size="lg" className="flex-1">
                 <MessageCircle className="mr-2 h-5 w-5" />
